@@ -1,0 +1,41 @@
+Arguments: 
+  /opt/homebrew/Cellar/node/18.2.0/bin/node /Users/emribeiro/.yarn/bin/yarn.js add -D typescript ts-node-dev @types/node @types/prisma prisma
+
+PATH: 
+  /Users/emribeiro/Development/flutter/bin:/Users/emribeiro/.jbang/bin:/Users/emribeiro/.yarn/bin:/Users/emribeiro/.config/yarn/global/node_modules/.bin:/Users/emribeiro/.serverless/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/emribeiro/Development/flutter/bin:/Users/emribeiro/.jbang/bin:/Users/emribeiro/.yarn/bin:/Users/emribeiro/.config/yarn/global/node_modules/.bin:/Users/emribeiro/.serverless/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.9/bin:/Users/emribeiro/.cargo/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.2.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@types%2fprisma: Not found
+      at params.callback [as _callback] (/Users/emribeiro/.yarn/lib/cli.js:66145:18)
+      at self.callback (/Users/emribeiro/.yarn/lib/cli.js:140890:22)
+      at Request.emit (node:events:527:28)
+      at Request.<anonymous> (/Users/emribeiro/.yarn/lib/cli.js:141862:10)
+      at Request.emit (node:events:527:28)
+      at IncomingMessage.<anonymous> (/Users/emribeiro/.yarn/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:641:28)
+      at IncomingMessage.emit (node:events:539:35)
+      at endReadableNT (node:internal/streams/readable:1344:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+    "name": "api",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
