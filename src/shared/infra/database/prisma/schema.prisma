@@ -30,6 +30,7 @@ model Story{
   finishedAt DateTime?
   points Int @default(0)
   acceptanceCriteria String?
+  storyType StoryType @relation(fields:[type], references: [type])
 
   projectId String
   project Project @relation(fields: [projectId], references: [id])
@@ -41,13 +42,15 @@ model Story{
 model StoryType{
   type Int @id
   description String
+
+  stories Story[]
 }
 
 model Task{
   id String @id @default(uuid())
   description String
   isDone Boolean @default(false)
-  doneAt DateTime @default(now())
+  doneAt DateTime?
 
   storyId String
   story Story @relation(fields: [storyId], references: [id])
