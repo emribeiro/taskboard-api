@@ -10,7 +10,7 @@ class StoryRepository{
     }
 
     async getStoryById(id: string){
-        return await this.client.story.findUniqueOrThrow({where: { id }});
+        return await this.client.story.findUniqueOrThrow({where: { id }, include: { tasks: true, storyType: true}});
     }
 
     async updateStory(story: Story){
