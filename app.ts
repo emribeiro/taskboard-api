@@ -1,14 +1,11 @@
-import {PrismaClient} from "@prisma/client";
+import express from "express";
+import { router } from "./src/shared/routes";
 
+const app = express();
+app.use(express.json());
 
-const client = new PrismaClient();
+app.use(router);
 
-async function getSprints(){
-    const sprints = await client.sprint.findMany();
-
-    console.log(sprints);
-}
-
-getSprints();
-
-
+app.listen(8080, () => {
+    console.log("App started on port 8080");
+});

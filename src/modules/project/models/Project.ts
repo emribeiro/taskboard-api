@@ -1,4 +1,4 @@
-import { Story } from "../../story/models/Story";
+import { Story } from "../../story/dtos/StoryDTO";
 
 interface Project {
     id: string;

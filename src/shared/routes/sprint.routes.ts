@@ -1,11 +1,14 @@
 import { Router } from "express";
-import { listActiveSprintUseCase } from "../../modules/sprint/useCases/ListActiveSprintUseCase";
+import { SprintService } from "../../modules/sprint/SprintService";
 
+const serviceRouter = Router();
+const sprintService = new SprintService();
 
-const router = Router();
-
-router.get("/", (request, response) => {
-    
+serviceRouter.get("/active", async (request, response) => {
+    const sprint = await sprintService.getActiveSprint();
+    return response
+                    .status(200)
+                    .send(sprint);    
 });
 
-export { router }
+export { serviceRouter }

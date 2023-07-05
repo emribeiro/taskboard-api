@@ -1,16 +1,20 @@
+import { Sprint } from "@prisma/client";
 import { client } from "../../../shared/infra/database";
-import { sprintRepository } from "../repository/SprintRepository"
+import { SprintRepository } from "../repository/SprintRepository"
 
 
-const listActiveSprintUseCase = () => {
-    
-    const repository = sprintRepository(client);
+class ListActiveSprintUseCase{
 
-    const execute = () => {
-        return repository.getActiveSprint();
+    private repository: any;
+
+    constructor(){
+        this.repository = new SprintRepository(client);
     }
 
-    return execute;
+    async execute(): Promise<Sprint>{
+        const sprint = await this.repository.getActiveSprint();
+        return sprint;
+    }
 }
 
-export { listActiveSprintUseCase }
+export { ListActiveSprintUseCase }
