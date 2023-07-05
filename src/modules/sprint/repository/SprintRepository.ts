@@ -18,6 +18,16 @@ class SprintRepository{
 
         return sprint;
     }
+
+    async getActiveStorySprint(storyId: string){
+        const sprint = await this.client   
+                                 .sprint
+                                 .findFirst({
+                                    where: { status: 1, stories: { some: { storyId }}}
+                                 });
+        
+        return sprint;
+    }
 }
 
 export { SprintRepository}
