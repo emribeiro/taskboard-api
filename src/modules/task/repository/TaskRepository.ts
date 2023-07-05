@@ -28,6 +28,10 @@ class TaskRepository{
     async update(task: Task){
         await this.client.task.update({where: { id: task.id} ,data: task });
     }
+
+    async delete(taskId: string){
+        await this.client.task.delete({where: { id: taskId}});
+    }
 }
 
 export { TaskRepository }

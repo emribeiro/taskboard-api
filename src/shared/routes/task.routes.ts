@@ -11,4 +11,11 @@ taskRouter.put("/:taskId", async (request, response) => {
     return response.status(200).send();
 });
 
+taskRouter.delete("/:taskId", async (request, response) => {
+    const taskId = request.params.taskId;
+    await taskService.deleteTask(taskId);  
+
+    return response.status(200).send();
+})
+
 export { taskRouter }
