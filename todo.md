@@ -14,24 +14,24 @@
  - [ ] - Code project list endpoint
 
 ## Story
- - [ ] - Code story repository
- - [ ] - Code project story creation endpoint
+ - [X] - Code story repository
+ - [X] - Code project story creation endpoint
  - [ ] - Code project story listing endpoint
  - [ ] - Code project story update endpoint
- - [ ] - Code project story finishing endpoint
+ - [X] - Code project story finishing endpoint
  - [ ] - Code sprint story listing endpoint
 
 ## Task
- - [ ] - Code task repository
- - [ ] - Code Story Task creation endpoint
+ - [X] - Code task repository
+ - [X] - Code Story Task creation endpoint
  - [ ] - Code Story Task delete endpoint
- - [ ] - Code Story Task finish endpoint
+ - [X] - Code Story Task finish endpoint
  - [ ] - Code Story Task list endpoint
 
 ## Sprint
 
  - [ ] - Code Sprint Creation endpoint
- - [ ] - Code get active sprint endpoint
+ - [X] - Code get active sprint endpoint
  - [ ] - Code start sprint endpoint
  - [ ] - Code finish sprint endpoint.
- - [ ] - Code Sprint repository.
+ - [X] - Code Sprint repository.
