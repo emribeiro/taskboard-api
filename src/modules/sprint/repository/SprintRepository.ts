@@ -28,6 +28,17 @@ class SprintRepository{
         
         return sprint;
     }
+
+    async createSprint(name: string, startDate: Date, dueDate: Date){
+        await this.client.sprint.create({
+            data: {
+                status: 1,
+                name,
+                startDate,
+                dueDate
+            }
+        });
+    }
 }
 
 export { SprintRepository}

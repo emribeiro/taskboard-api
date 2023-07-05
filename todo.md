@@ -20,18 +20,18 @@
  - [ ] - Code project story update endpoint
  - [X] - Code project story finishing endpoint
  - [ ] - Code sprint story listing endpoint
+ - [ ] - Code include story on Sprint endpoint
 
 ## Task
  - [X] - Code task repository
  - [X] - Code Story Task creation endpoint
- - [ ] - Code Story Task delete endpoint
+ - [X] - Code Story Task delete endpoint
  - [X] - Code Story Task finish endpoint
  - [ ] - Code Story Task list endpoint
 
 ## Sprint
 
- - [ ] - Code Sprint Creation endpoint
+ - [X] - Code Sprint Creation endpoint
  - [X] - Code get active sprint endpoint
- - [ ] - Code start sprint endpoint
  - [ ] - Code finish sprint endpoint.
  - [X] - Code Sprint repository.

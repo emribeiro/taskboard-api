@@ -59,7 +59,7 @@ model Task{
 model Sprint{
   id String @id @default(uuid())
   name String
-  status Int //0 - Planejando | 1 - Executando | 2 - Finalizado | 9 - Cancelado
+  status Int // 1 - Executando | 2 - Finalizado | 9 - Cancelado
   startDate DateTime
   dueDate DateTime
   endDate DateTime?

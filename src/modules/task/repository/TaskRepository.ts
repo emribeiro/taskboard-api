@@ -19,7 +19,7 @@ class TaskRepository{
         });
     }
 
-    async getById(id: string): Promise<Task>{
+    async getById(id: string){
         const task =  await this.client.task.findUniqueOrThrow({ where: { id }});
                 
         return task;

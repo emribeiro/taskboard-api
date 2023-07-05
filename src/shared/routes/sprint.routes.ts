@@ -11,4 +11,14 @@ serviceRouter.get("/active", async (request, response) => {
                     .send(sprint);    
 });
 
+serviceRouter.post("/", async (request, response) => {
+    const {name, startDate, dueDate} = request.body;
+
+    const sprint = await sprintService.createSprint(name, startDate, dueDate);
+
+    return response
+            .status(200)
+            .send(sprint);
+});
+
 export { serviceRouter }
