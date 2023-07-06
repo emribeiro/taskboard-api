@@ -63,6 +63,17 @@ class StoryRepository{
                     }
                   });
     }
+
+    async addStoryInSprint(sprintId: string, storyId: string){
+        await this.client.storiesOnSprints
+                    .create({ 
+                        data: {
+                            storyId,
+                            sprintId
+                        }
+                    })
+
+    }
 }
 
 export { StoryRepository }
