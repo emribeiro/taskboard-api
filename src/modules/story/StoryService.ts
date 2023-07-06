@@ -4,6 +4,7 @@ import { GetStoryByIdUseCase } from "./useCases/GetStoryByIdUseCase";
 import { CreateStoryUseCase } from "./useCases/CreateStoryUseCase";
 import { StartStoryUseCase } from "./useCases/StartStoryUseCase";
 import { IncludeStoryOnSprintUseCase } from "./useCases/IncludeStoryOnSprintUseCase";
+import { ListActiveStoriesUseCase } from "./useCases/ListActiveStoriesUseCase";
 
 class StoryService{
 
@@ -12,6 +13,7 @@ class StoryService{
     private createStoryUseCase: CreateStoryUseCase;
     private startStoryUseCase: StartStoryUseCase;
     private includeStoryOnSprintUseCase: IncludeStoryOnSprintUseCase;
+    private listActiveStoriesUseCase: ListActiveStoriesUseCase;
 
     constructor(){
         this.finishStoryUseCase = new FinishStoryUseCase();
@@ -19,7 +21,7 @@ class StoryService{
         this.createStoryUseCase = new CreateStoryUseCase();
         this.startStoryUseCase = new StartStoryUseCase();
         this.includeStoryOnSprintUseCase = new IncludeStoryOnSprintUseCase();
-
+        this.listActiveStoriesUseCase = new ListActiveStoriesUseCase();
     }
 
     async finishStory(storyId: string){
@@ -54,6 +56,12 @@ class StoryService{
 
     async includeStoryOnSprint( sprintId: string, storyId: string){
         await this.includeStoryOnSprintUseCase.execute(sprintId, storyId);
+    }
+
+    async listActiveStories(){
+        const stories = this.listActiveStoriesUseCase.execute();
+
+        return stories;
     }
 
 }

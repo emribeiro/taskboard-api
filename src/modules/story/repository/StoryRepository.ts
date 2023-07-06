@@ -74,6 +74,19 @@ class StoryRepository{
                     })
 
     }
+
+    async listAllActiveStories(){
+        const stories = await this.client.story.findMany({
+            where: {
+                NOT: {
+                    status: 2
+                }
+            }
+        });
+
+        return stories;
+
+    }
 }
 
 export { StoryRepository }

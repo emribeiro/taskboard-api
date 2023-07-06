@@ -6,6 +6,14 @@ const storyRouter = Router();
 const storyService: StoryService = new StoryService();
 const taskService: TaskService = new TaskService();
 
+storyRouter.get("/", async (request, response) => {
+    const stories = await storyService.listActiveStories();
+
+    return response
+            .status(200)
+            .send(stories);
+});
+
 storyRouter.get("/:storyId", async (request, response) => {
     const id = request.params.storyId;
     const story = await storyService.getStoryById(id);
