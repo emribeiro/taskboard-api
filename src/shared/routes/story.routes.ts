@@ -22,6 +22,14 @@ storyRouter.put("/:storyId/finish", async (request, response) => {
     return response.status(200).send();
 });
 
+storyRouter.put("/:storyId/start", async (request, response) => {
+    const id = request.params.storyId;
+
+    await storyService.startStory(id);
+
+    return response.status(200).send();
+});
+
 storyRouter.post("/:storyId/task", async (request, response) => {
     const storyId = request.params.storyId;
     const {taskDescription} = request.body;

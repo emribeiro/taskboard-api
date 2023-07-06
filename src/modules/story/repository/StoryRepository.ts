@@ -42,7 +42,15 @@ class StoryRepository{
                     where: {
                         id: story.id
                     }, 
-                    data: story
+                    data: {
+                        title: story.title,
+                        type: story.type,
+                        status: story.status,
+                        startedAt: story.startedAt,
+                        finishedAt: story.finishedAt,
+                        points: story.points,
+                        acceptanceCriteria: story.acceptanceCriteria
+                    }
                 })
     }
 

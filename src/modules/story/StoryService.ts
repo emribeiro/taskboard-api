@@ -2,17 +2,20 @@ import { Story } from "@prisma/client";
 import { FinishStoryUseCase } from "./useCases/FinishStoryUseCase";
 import { GetStoryByIdUseCase } from "./useCases/GetStoryByIdUseCase";
 import { CreateStoryUseCase } from "./useCases/CreateStoryUseCase";
+import { StartStoryUseCase } from "./useCases/StartStoryUseCase";
 
 class StoryService{
 
     private finishStoryUseCase: FinishStoryUseCase;
     private getStoryByIdUseCase: GetStoryByIdUseCase;
     private createStoryUseCase: CreateStoryUseCase;
+    private startStoryUseCase: StartStoryUseCase;
 
     constructor(){
         this.finishStoryUseCase = new FinishStoryUseCase();
         this.getStoryByIdUseCase = new GetStoryByIdUseCase();
         this.createStoryUseCase = new CreateStoryUseCase();
+        this.startStoryUseCase = new StartStoryUseCase();
     }
 
     async finishStory(storyId: string){
@@ -39,6 +42,10 @@ class StoryService{
                                 )
         
         return story;
+    }
+
+    async startStory( storyId: string){
+        await this.startStoryUseCase.execute(storyId);
     }
 
 }

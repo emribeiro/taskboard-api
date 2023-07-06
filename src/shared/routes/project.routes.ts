@@ -17,6 +17,8 @@ projectRouter.post("/:projectId/story", async (request, response) => {
                                         , acceptanceCriteria
                                         );
 
+    console.log(story);
+                                        
     return response.status(201).send(story);
 });
 
