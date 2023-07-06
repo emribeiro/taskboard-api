@@ -39,6 +39,10 @@ class SprintRepository{
             }
         });
     }
+
+    async finishSprint(sprintId: string){
+        await this.client.sprint.update({where: { id: sprintId}, data: { status: 2, endDate: new Date()}});
+    }
 }
 
 export { SprintRepository}

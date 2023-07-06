@@ -21,4 +21,14 @@ serviceRouter.post("/", async (request, response) => {
             .send(sprint);
 });
 
+serviceRouter.put("/:sprintId/finish", async (request, response) => {
+    const sprintId = request.params.sprintId;
+
+    await sprintService.finishSprint(sprintId);
+
+    return response
+            .status(200)
+            .send();
+});
+
 export { serviceRouter }
